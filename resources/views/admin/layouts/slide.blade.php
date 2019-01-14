@@ -27,7 +27,7 @@
                         @if(auth('admin')->user()->hasPermissionTo('Admin-good') || auth('admin')->user()->hasRole('good'))
                             <li><a href="{{route('admin.good.index')}}">商品管理</a></li>
                         @endif
-                        {{--<li><a href="{{route('admin.order.index')}}">订单管理</a></li>--}}
+                        <li><a href="{{route('admin.order.index')}}">订单管理</a></li>
                     </ul>
                 </li>
                 @endif
@@ -39,16 +39,16 @@
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         @if(auth('admin')->user()->hasPermissionTo('Admin-config-website'))
-                            <li><a href="{{route('admin.config.create',['type'=>'website'])}}">站点配置</a></li>
+                            <li><a href="{{route('admin.config.edit',['type'=>'website'])}}">站点配置</a></li>
                         @endif
                         @if(auth('admin')->user()->hasPermissionTo('Admin-config-upload'))
-                            <li><a href="{{route('admin.config.create',['type'=>'upload'])}}">上传配置</a></li>
+                            <li><a href="{{route('admin.config.edit',['type'=>'upload'])}}">上传配置</a></li>
                         @endif
                         @if(auth('admin')->user()->hasPermissionTo('Admin-config-email'))
-                            <li><a href="{{route('admin.config.create',['type'=>'mail'])}}">邮件配置</a></li>
+                            <li><a href="{{route('admin.config.edit',['type'=>'email'])}}">邮件配置</a></li>
                         @endif
                         @if(auth('admin')->user()->hasPermissionTo('Admin-config-search'))
-                            <li><a href="{{route('admin.config.create',['type'=>'search'])}}">搜索配置</a></li>
+                            <li><a href="{{route('admin.config.edit',['type'=>'search'])}}">搜索配置</a></li>
                         @endif
                     </ul>
                 </li>
@@ -61,7 +61,7 @@
                     </a>
                     <ul aria-expanded="false" class="collapse">
                         @if(auth('admin')->user()->hasPermissionTo('Admin-admin'))
-                            <li><a href="{{route('admin.admin.index')}}">用户管理</a></li>
+                            <li><a href="{{route('admin.admin.index')}}">管理员管理</a></li>
                         @endif
                         @if(auth('admin')->user()->hasPermissionTo('Admin-role'))
                             <li><a href="{{route('admin.role.index')}}">角色管理</a></li>

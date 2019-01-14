@@ -104,7 +104,7 @@
                             <thead>
                             <tr>
                                 <th>名称</th>
-                                <th>。。。</th>
+                                <th>XX商城</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -114,21 +114,22 @@
                             </tr>
                             <tr>
                                 <td>联系开发者</td>
-                                <td></td>
+                                <td>m15701641946@163.com</td>
                             </tr>
                             <tr>
-                                <td>github</td>
-                                <td><a target="_blank" href="">https://github.com/imasuperman</a></td>
+                                <td>GitHub</td>
+                                <td><a target="_blank" href="https://github.com/abellmz">https://github.com/abellmz</a></td>
                             </tr>
                             <tr>
                                 <td>博客</td>
-                                <td><a target="_blank" href="https://wubin.pro">wubin.pro</a></td>
+                                <td><a target="_blank" href="abellmz.cn">abellmz.cn</a></td>
                             </tr>
                             <tr>
                                 <td>微信/qq</td>
                                 <td>
+                                    {{--以下点击后自动打开qq进行登录--}}
                                     <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=290646986&site=qq&menu=yes">
-
+                                        1114708936
                                     </a>
                                 </td>
                             </tr>

@@ -48,7 +48,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
     Route::post('/login', 'LoginController@login')->name('login');
 
 });
-//后台需要拦截的
+//后台需要拦截的（中间件拦截，对地址栏进行拦截）
 Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function () {
 //    退出登录
     Route::get('/logout', 'LoginController@logout')->name('logout');
@@ -58,14 +58,18 @@ Route::group(['middleware' => ['admin.auth'], 'prefix' => 'admin', 'namespace' =
     Route::resource('category', 'CategoryController');
 //    商品管理
     Route::resource('good', 'GoodController');
+//    订单管理
+    Route::resource('order','OrderController');
 //    配置项管理
     Route::resource('config', 'ConfigController');
 
 //    管理员管理
     Route::resource('admin','AdminController');
     Route::get('admin_set_role_create/{admin}','AdminController@adminSetRoleCreate')->name('admin_set_role_create');
-//角色管理
+    Route::post('admin_set_role_store/{admin}','AdminController@adminSetRoleStore')->name('admin_set_role_store');
+    //角色管理
     Route::resource('role','RoleController');
+    Route::post('set_role_permission/{role}','RoleController@setRolePermission')->name('set_role_permission');
 // 权限管理
     Route::get('permission','PermissionController@index')->name('permission');
 //    清除权限缓存

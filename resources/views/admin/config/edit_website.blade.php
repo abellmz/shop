@@ -20,6 +20,7 @@
                     <div class="card-body">
                         <form action="{{route('admin.config.update',['type'=>$name])}}" method="post"
                               class="form-horizontal ">
+                            {{--表当方法伪造--}}
                         @csrf @method('PUT')
                         <!--/row-->
                             <div class="form-group row">

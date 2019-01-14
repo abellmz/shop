@@ -10,7 +10,7 @@
     </div>
     <div class="card">
         <div class="card-body p-b-0">
-            <h4 class="card-title">后台管理员管理</h4>
+            <h4 class="card-title">管理员管理</h4>
         </div>
         <!-- Nav tabs -->
         <ul class="nav nav-tabs customtab" role="tablist">

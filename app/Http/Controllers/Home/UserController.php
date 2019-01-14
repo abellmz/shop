@@ -90,8 +90,9 @@ class UserController extends CommonController
            $data['email'] = '';
        }
         //将数据写入数据表中
-        $user=User::create($data);
-       $user->name='豪侠'.$user['id'].'号';
+        $user=User::create($data);//$config['MAIL_DRIVER']??'smtp'
+//        dd($user->name);
+       $user->name=$user->name?:'豪侠'.$user['id'].'号';//检测是否为空字段（包括空字符串）
        $user->save();
 //        数据库填数据
 //        重定向，即跳转，三村  需要模板调用才会提示

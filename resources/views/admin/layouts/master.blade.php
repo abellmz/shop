@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <title>商城后台管理系统</title>
+    <title>{{hd_config('website.site_name')}}后台管理系统</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('org/assets/')}}/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->

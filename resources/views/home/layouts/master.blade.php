@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>xx商城</title>
+    <link rel="stylesheet" href="">
+    <title>{{hd_config('website.site_name')}}</title>
     <script src="{{asset ('org/home')}}/js/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
     @stack('css')
 
@@ -27,7 +28,7 @@
     <div class="topbox">
         <div class="main">
             <div class="topleft fl">
-                <a href="/">欢迎来到xx商城</a>
+                <a href="/">欢迎来到{{hd_config('website.site_name')}}</a>
             </div>
             <div class="topright fr">
                 <div class="login fl">
@@ -54,7 +55,7 @@
     <div class="logoRegion">
         <div class="main">
             <div class="logo">
-                <a href="/"><img src=""/></a>
+                <a href="/"><img width="100px" src="{{hd_config('website.site_logo')}}"/></a>
             </div>
             <div class="seachRegion">
                 <div class="seach fl">
@@ -135,8 +136,8 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright"> ©2016-2018
-        BYCMS工作室版权所有 </div>
+    <div class="footer-copyright"> {{hd_config('website.site_name','万人商城')}}©2016-2018
+        BYCMS工作室版权所有 {{hd_config ('website.site_icp')}}</div>
 </div>
 <!--尾部结束-->
 

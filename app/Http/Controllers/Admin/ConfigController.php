@@ -23,9 +23,15 @@ class ConfigController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+    public function create(Request $request)
     {
-        //
+//        admin_has_permission('Admin-config-website','Admin-config-upload','Admin-config-email','Admin-config-search');
+//        dd($request->type);
+//        $name=$request->query('type');
+//        $config=Config::where('name',$name)->value('value');
+//        //laravel 手册地址:https://laravel-china.org/docs/laravel/5.7/queries/2289#588b50
+//        return view('admin.config.edit_' . $name,compact('name','config'));
     }
 
     /**
@@ -56,18 +62,26 @@ class ConfigController extends Controller
      * @param  \App\Models\Config  $config
      * @return \Illuminate\Http\Response
      */
+    //    加载配置项模板页面
     public function edit($name)
     {
 //        dd('1');数据库中寻找列/值，若未找到就插入一条数据 列/值
-        $config=Config::firstOrnew(
-            ['name'=>$name]
-        );
+//        $config=Config::firstOrnew(
+//            ['name'=>$name]
+//        );
+//        ------------------------------
+        admin_has_permission('Admin-config-website','Admin-config-upload','Admin-config-email','Admin-config-search');
+//        dd($name);
+        $config=Config::where('name',$name)->value('value');
+        //laravel 手册地址:https://laravel-china.org/docs/laravel/5.7/queries/2289#588b50
         return view('admin.config.edit_' . $name,compact('name','config'));
     }
 //    数据的添加和更新
     public function update($name ,Request $request)
     {
+        admin_has_permission('Admin-config-website','Admin-config-upload','Admin-config-email','Admin-config-search');
 //        数据库中寻找列/值，若未找到就插入一条数据 列/值
+//        dd($request->toArray());
         $res=Config::updateOrCreate(
             ['name'=>$name],//查询条件
             ['name'=>$name,'value'=>$request->all()]
@@ -76,7 +90,7 @@ class ConfigController extends Controller
 //        dd($request);
 //        hd_edit_env() laravel扩展包的函数，本函数用于修改.env配置文件，更新的配置项必须在.env文件中存在，
 //          没有则不修改
-//        编写触动了观察者的模型事件，存入缓存，用自助函数hd_config()就能读到缓存
+//        编写触动了观察者的模型事件ConfigOberver，存入缓存，用自助函数hd_config()就能读到缓存
         hd_edit_env($request->all());
 //        hd_config($request->all());
 //        dd($request);
